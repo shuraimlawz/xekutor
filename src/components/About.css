@@ -191,9 +191,19 @@
 }
 
 @media (max-width: 900px) {
+    .about {
+        padding: 60px 1.5rem;
+    }
+
     .about-container {
+        padding: 0;
         flex-direction: column;
         text-align: center;
+        gap: 3rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
     }
 
     .section-title::after {
