@@ -107,7 +107,7 @@
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 2.5rem);
     margin-bottom: 2rem;
     position: relative;
     display: inline-block;
@@ -125,7 +125,7 @@
 }
 
 .about-text {
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
     color: #ccc;
     line-height: 1.8;
     margin-bottom: 1.5rem;
@@ -177,14 +177,14 @@
 }
 
 .full-name {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 6vw, 2rem);
     font-weight: 700;
     color: #fff;
     margin-bottom: 0.5rem;
 }
 
 .nicknames {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--primary-color);
     font-family: monospace;
     opacity: 0.8;
@@ -192,18 +192,18 @@
 
 @media (max-width: 900px) {
     .about {
-        padding: 60px 1.5rem;
+        padding: var(--section-padding) 1.25rem;
     }
 
     .about-container {
-        padding: 0;
         flex-direction: column;
         text-align: center;
-        gap: 3rem;
+        gap: 4rem;
+        width: 100%;
     }
 
-    .section-title {
-        font-size: 2rem;
+    .about-content {
+        width: 100%;
     }
 
     .section-title::after {
@@ -223,7 +223,7 @@
 
     .img-carousel {
         width: 100%;
-        max-width: 280px;
-        height: 280px;
+        max-width: 300px;
+        height: 300px;
     }
 }

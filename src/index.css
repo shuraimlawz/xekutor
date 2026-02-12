@@ -4,6 +4,10 @@
   --bg-color: #0a0a0a;
   --text-color: #ffffff;
   --font-family: 'Inter', system-ui, sans-serif;
+
+  /* Fluid Spacing & Typography */
+  --section-padding: clamp(60px, 10vw, 120px);
+  --container-max-width: 1200px;
 }
 
 * {
@@ -19,17 +23,27 @@ body {
   padding: 0;
   overflow-x: hidden;
   background-color: var(--bg-color);
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
   color: var(--text-color);
   font-family: var(--font-family);
   line-height: 1.6;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
 }
 
 section {
   width: 100%;
+  padding: var(--section-padding) 2rem;
   overflow-x: hidden;
+}
+
+@media (max-width: 480px) {
+  section {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
 }
 
 a {
