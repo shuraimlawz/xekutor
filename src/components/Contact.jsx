@@ -77,11 +77,11 @@ const Contact = () => {
                             </div>
                         </div>
                         <div className="social-links">
-                            <a href={socialLinks.github} target="_blank" rel="https://github.com/shuraimlawz" className="social-btn">GitHub</a>
-                            <a href={socialLinks.linkedin} target="_blank" rel="www.linkedin.com/in/shuraim-issaka-091392360" className="social-btn">LinkedIn</a>
-                            <a href={socialLinks.facebook} target="_blank" rel="https://www.facebook.com/shuraim.issaka" className="social-btn">Facebook</a>
-                            <a href={socialLinks.instagram} target="_blank" rel="https://www.instagram.com/1_shuraimi?igsh=anRhMzZxNjV0MXJI" className="social-btn">Instagram</a>
-                            <a href={socialLinks.x} target="_blank" rel="https://x.com/1_shuraimi" className="social-btn">X</a>
+                            <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="social-btn">GitHub</a>
+                            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="social-btn">LinkedIn</a>
+                            <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="social-btn">Facebook</a>
+                            <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="social-btn">Instagram</a>
+                            <a href={socialLinks.x} target="_blank" rel="noopener noreferrer" className="social-btn">X</a>
                         </div>
                     </div>
                     {status === 'success' ? (

@@ -81,6 +81,8 @@
     height: 100%;
     z-index: 1;
     pointer-events: none;
+    overflow: hidden;
+    /* Added to contain blobs */
 }
 
 .blob {
@@ -89,6 +91,7 @@
     filter: blur(80px);
     opacity: 0.4;
     animation: float 10s infinite alternate;
+    will-change: transform;
 }
 
 .blob-1 {

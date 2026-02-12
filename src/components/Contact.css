@@ -139,8 +139,8 @@
     .social-btn {
         padding: 8px 12px;
         font-size: 0.85rem;
-        flex: 1;
-        min-width: 100px;
+        flex: 0 1 auto;
+        min-width: auto;
         text-align: center;
     }
 
