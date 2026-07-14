@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#111827"/>
+  <rect x="0" y="0" width="800" height="48" fill="#1f2937"/>
+  <text x="40" y="30" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#fff">ShopWave</text>
+  <circle cx="720" cy="24" r="14" fill="#374151"/>
+  <text x="714" y="28" font-family="system-ui,sans-serif" font-size="12" fill="#fff">3</text>
+  <rect x="40" y="70" width="340" height="360" rx="12" fill="#1f2937"/>
+  <rect x="60" y="90" width="300" height="200" rx="8" fill="#374151"/>
+  <text x="60" y="320" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#fff">Wireless Headphones</text>
+  <text x="60" y="345" font-family="system-ui,sans-serif" font-size="14" fill="#00ff88">$89.99</text>
+  <rect x="60" y="365" width="120" height="36" rx="8" fill="#00ff88"/>
+  <text x="82" y="388" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#000">Add to Cart</text>
+  <rect x="420" y="70" width="340" height="360" rx="12" fill="#1f2937"/>
+  <text x="440" y="100" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#fff">Your Cart</text>
+  <rect x="440" y="120" width="300" height="60" rx="8" fill="#374151"/>
+  <text x="460" y="155" font-family="system-ui,sans-serif" font-size="13" fill="#ccc">Headphones × 1</text>
+  <text x="680" y="155" font-family="system-ui,sans-serif" font-size="13" fill="#00ff88">$89.99</text>
+  <rect x="440" y="200" width="300" height="60" rx="8" fill="#374151"/>
+  <text x="460" y="235" font-family="system-ui,sans-serif" font-size="13" fill="#ccc">Phone Case × 2</text>
+  <text x="680" y="235" font-family="system-ui,sans-serif" font-size="13" fill="#00ff88">$24.00</text>
+  <line x1="440" y1="320" x2="740" y2="320" stroke="#374151" stroke-width="1"/>
+  <text x="440" y="350" font-family="system-ui,sans-serif" font-size="14" fill="#888">Total</text>
+  <text x="680" y="350" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#fff">$113.99</text>
+  <rect x="440" y="370" width="300" height="40" rx="8" fill="#6366f1"/>
+  <text x="530" y="396" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#fff">Checkout</text>
+</svg>

@@ -1,165 +1,292 @@
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    padding: 0 2rem;
+    padding: calc(var(--header-height) + 2rem) 2rem 4rem;
 }
 
 .hero-content {
     text-align: center;
     z-index: 2;
-    max-width: 800px;
+    max-width: 900px;
+    width: 100%;
+    padding: clamp(2rem, 4vw, 3rem);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 32px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
 }
 
-.hero-title {
-    font-size: clamp(2.5rem, 10vw, 4rem);
-    font-weight: 800;
-    line-height: 1.1;
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    background: rgba(0, 255, 136, 0.08);
+    border: 1px solid rgba(0, 255, 136, 0.25);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards;
 }
 
-.highlight {
-    background: linear-gradient(120deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.5); }
+    50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(0, 255, 136, 0); }
+}
+
+.hero-greeting {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.hero-name {
+    font-size: clamp(2.5rem, 10vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(120deg, #fff 30%, var(--primary-color) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+.hero-aliases {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    opacity: 0.75;
+    margin-bottom: 1.25rem;
+}
+
+.hero-role {
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    font-weight: 600;
+    color: var(--text-subtle);
+    margin-bottom: 1.5rem;
+    min-height: 2.5rem;
+}
+
+.typing-text {
+    color: var(--primary-color);
+}
+
+.cursor {
+    color: var(--primary-color);
+    animation: blink 1s step-end infinite;
+    font-weight: 300;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
 .hero-subtitle {
-    font-size: clamp(1rem, 3vw, 1.25rem);
-    color: #ccc;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    color: var(--text-muted);
     margin-bottom: 2.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.2s forwards;
-    max-width: 600px;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
 }
 
 .hero-cta {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
     justify-content: center;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.4s forwards;
-    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
 }
 
-.btn {
-    padding: 0.8rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.btn-ghost {
+    background: transparent;
+    color: var(--text-subtle);
+    border: none;
+    padding: 0.8rem 1.5rem;
 }
 
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+.btn-ghost:hover {
+    color: var(--primary-color);
+    box-shadow: none;
+    transform: none;
 }
 
-.btn-primary {
-    background: var(--primary-color);
-    color: #000;
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(10px);
 }
 
-.btn-outline {
-    border: 2px solid var(--text-color);
-    color: var(--text-color);
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.9rem;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.btn-outline:hover {
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+.stat-value {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
 .hero-background {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     z-index: 1;
     pointer-events: none;
     overflow: hidden;
-    /* Added to contain blobs */
+}
+
+.grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
 }
 
 .blob {
     position: absolute;
     border-radius: 50%;
     filter: blur(80px);
-    opacity: 0.4;
+    opacity: var(--blob-opacity);
     animation: float 10s infinite alternate;
     will-change: transform;
 }
 
 .blob-1 {
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 450px;
     background: var(--primary-color);
-    top: 10%;
-    left: 10%;
+    top: 5%;
+    left: 5%;
 }
 
 .blob-2 {
-    width: 300px;
-    height: 300px;
-    background: #00ccff;
-    bottom: 20%;
-    right: 15%;
+    width: 350px;
+    height: 350px;
+    background: var(--accent-blue);
+    bottom: 15%;
+    right: 10%;
     animation-duration: 12s;
 }
 
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.blob-3 {
+    width: 250px;
+    height: 250px;
+    background: #7c3aed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-duration: 15s;
+    opacity: 0.2;
 }
 
 @keyframes float {
-    0% {
-        transform: translate(0, 0);
-    }
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(30px, 50px); }
+}
 
-    100% {
-        transform: translate(30px, 50px);
-    }
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    opacity: 0.5;
+    transition: opacity var(--transition);
+}
+
+.scroll-indicator:hover {
+    opacity: 1;
+}
+
+.scroll-mouse {
+    display: block;
+    width: 24px;
+    height: 38px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    position: relative;
+}
+
+.scroll-wheel {
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    animation: scroll-wheel 2s infinite;
+}
+
+@keyframes scroll-wheel {
+    0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(12px); }
 }
 
 @media (max-width: 768px) {
     .hero {
-        padding: 0 1.25rem;
+        padding: calc(var(--header-height) + 1rem) 1.25rem 3rem;
+    }
+
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1.25rem;
+    }
+
+    .hero-content {
+        padding: 1.5rem;
     }
 
     .hero-cta {
         flex-direction: column;
-        gap: 1rem;
+        align-items: center;
         max-width: 320px;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .btn {
+    .hero-cta .btn {
         width: 100%;
-        text-align: center;
-        padding: 1rem;
     }
 
-    .blob-1 {
-        width: 250px;
-        height: 250px;
-    }
+    .blob-1 { width: 250px; height: 250px; }
+    .blob-2 { width: 180px; height: 180px; }
+    .blob-3 { display: none; }
 
-    .blob-2 {
-        width: 180px;
-        height: 180px;
-    }
+    .scroll-indicator { display: none; }
 }

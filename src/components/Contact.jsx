@@ -23,16 +23,11 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!formEndpoint) {
-            setError('Contact endpoint not configured yet. Please update data.js');
-            return;
-        }
-
         setStatus('sending');
         setError('');
 
         try {
-            const response = await fetch(formEndpoint, {
+            const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -45,11 +40,32 @@ const Contact = () => {
                 setStatus('success');
                 setFormData({ name: '', email: '', message: '' });
             } else {
-                const data = await response.json();
+                const data = await response.json().catch(() => null);
                 setStatus('error');
-                setError(data.errors ? data.errors.map(err => err.message).join(', ') : 'Something went wrong. Please try again.');
+                setError(data?.error || 'Something went wrong. Please try again.');
             }
         } catch (err) {
+            if (formEndpoint) {
+                try {
+                    const response = await fetch(formEndpoint, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    if (response.ok) {
+                        setStatus('success');
+                        setFormData({ name: '', email: '', message: '' });
+                        return;
+                    }
+                } catch {
+                    // fall through to the generic error message
+                }
+            }
+
             setStatus('error');
             setError('Network error. Please check your connection and try again.');
         }
@@ -58,9 +74,15 @@ const Contact = () => {
     return (
         <section id="contact" className="contact">
             <div className="contact-container">
-                <h2 className="section-title">Get In Touch</h2>
+                <div className="section-header centered reveal">
+                    <span className="section-label">Contact</span>
+                    <h2 className="section-title">Get In Touch</h2>
+                    <p className="section-subtitle">
+                        Have a project in mind or just want to say hello? I'd love to hear from you.
+                    </p>
+                </div>
                 <div className="contact-content">
-                    <div className="contact-info">
+                    <div className="contact-info reveal">
                         <h3>Let's Talk</h3>
                         <p>
                             I'm open to freelance opportunities and interesting projects.
@@ -91,7 +113,7 @@ const Contact = () => {
                             <button onClick={() => setStatus('')} className="btn btn-primary">Send Another</button>
                         </div>
                     ) : (
-                        <form className="contact-form" onSubmit={handleSubmit}>
+                        <form className="contact-form reveal reveal-delay-2" onSubmit={handleSubmit}>
                             <div className="form-group">
                                 <input
                                     type="text"
@@ -122,7 +144,7 @@ const Contact = () => {
                                     required
                                 ></textarea>
                             </div>
-                            {error && <p className="error-message" style={{ color: '#ff4d4d', marginBottom: '1rem', fontSize: '0.9rem' }}>{error}</p>}
+                            {error && <p className="error-message">{error}</p>}
                             <button type="submit" className="btn btn-primary" disabled={status === 'sending'}>
                                 {status === 'sending' ? 'Sending...' : 'Send Message'}
                             </button>

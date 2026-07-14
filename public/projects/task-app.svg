@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#0c0c14"/>
+  <rect x="0" y="0" width="200" height="450" fill="#14141f"/>
+  <text x="24" y="40" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">TaskFlow</text>
+  <rect x="24" y="70" width="152" height="32" rx="6" fill="#00ff8820"/>
+  <text x="40" y="90" font-family="system-ui,sans-serif" font-size="12" fill="#00ff88">My Tasks</text>
+  <text x="40" y="130" font-family="system-ui,sans-serif" font-size="12" fill="#666">Team Board</text>
+  <text x="40" y="160" font-family="system-ui,sans-serif" font-size="12" fill="#666">Calendar</text>
+  <rect x="220" y="24" width="560" height="402" rx="12" fill="#14141f"/>
+  <text x="244" y="60" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#fff">Sprint Board</text>
+  <rect x="244" y="80" width="160" height="320" rx="8" fill="#1a1a28"/>
+  <text x="260" y="108" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#888">To Do</text>
+  <rect x="260" y="120" width="128" height="56" rx="6" fill="#222230"/>
+  <text x="272" y="144" font-family="system-ui,sans-serif" font-size="11" fill="#ccc">Design mockups</text>
+  <rect x="260" y="188" width="128" height="56" rx="6" fill="#222230"/>
+  <text x="272" y="212" font-family="system-ui,sans-serif" font-size="11" fill="#ccc">Write API docs</text>
+  <rect x="420" y="80" width="160" height="320" rx="8" fill="#1a1a28"/>
+  <text x="436" y="108" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#888">In Progress</text>
+  <rect x="436" y="120" width="128" height="56" rx="6" fill="#00ff8820" stroke="#00ff88" stroke-width="1"/>
+  <text x="448" y="144" font-family="system-ui,sans-serif" font-size="11" fill="#00ff88">Build auth flow</text>
+  <rect x="596" y="80" width="160" height="320" rx="8" fill="#1a1a28"/>
+  <text x="612" y="108" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#888">Done</text>
+  <rect x="612" y="120" width="128" height="56" rx="6" fill="#222230"/>
+  <text x="624" y="144" font-family="system-ui,sans-serif" font-size="11" fill="#666">Setup project</text>
+  <rect x="612" y="188" width="128" height="56" rx="6" fill="#222230"/>
+  <text x="624" y="212" font-family="system-ui,sans-serif" font-size="11" fill="#666">Deploy staging</text>
+</svg>

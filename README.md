@@ -1,16 +1,46 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Contact form backend
 
-Currently, two official plugins are available:
+The contact form now posts submissions to a local Express API that stores them in PostgreSQL.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites
+- PostgreSQL running locally (for example via XAMPP/WAMP, or a standalone PostgreSQL server)
+- A database named `portfolio`
 
-## React Compiler
+### Environment
+Create a `.env` file with either PostgreSQL or MySQL settings:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```env
+PORT=5000
+DB_TYPE=postgres
+DATABASE_URL=postgres://postgres:postgres@localhost:5432/portfolio
+```
 
-## Expanding the ESLint configuration
+For XAMPP/WAMP MySQL:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```env
+PORT=5000
+DB_TYPE=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=
+DB_NAME=portfolio
+```
+
+### Run locally
+
+```bash
+npm install
+npm run db:init
+npm run server
+```
+
+In a second terminal:
+
+```bash
+npm run dev
+```
+
+The frontend will proxy `/api` requests to the backend on port 5000.

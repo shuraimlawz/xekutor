@@ -4,24 +4,31 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--header-bg);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
     padding: 1rem 0;
-    transition: all 0.3s ease;
+    transition: all var(--transition);
+}
+
+.header.scrolled {
+    background: var(--header-bg-scrolled);
+    border-bottom-color: var(--border-color);
+    padding: 0.75rem 0;
+    box-shadow: 0 4px 30px var(--shadow-color);
 }
 
 .header-container {
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
 }
 
 .logo a {
-    text-decoration: none;
     display: flex;
     align-items: baseline;
 }
@@ -34,8 +41,7 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 1px;
-    position: relative;
-    transition: all 0.3s ease;
+    transition: all var(--transition);
 }
 
 .logo-dot {
@@ -54,20 +60,8 @@
 }
 
 @keyframes pulse {
-    0% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.7;
-        transform: scale(1.2);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.2); }
 }
 
 .nav ul {
@@ -76,14 +70,15 @@
 }
 
 .nav a {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    color: var(--text-color);
-    transition: color 0.3s ease;
+    color: var(--text-subtle);
+    transition: color var(--transition);
     position: relative;
 }
 
-.nav a:hover {
+.nav a:hover,
+.nav a.active {
     color: var(--primary-color);
 }
 
@@ -95,16 +90,25 @@
     bottom: -5px;
     left: 0;
     background-color: var(--primary-color);
-    transition: width 0.3s ease;
+    transition: width var(--transition);
 }
 
-.nav a:hover::after {
+.nav a:hover::after,
+.nav a.active::after {
     width: 100%;
+}
+
+.header-cta {
+    padding: 0.55rem 1.25rem !important;
+    font-size: 0.9rem !important;
 }
 
 .menu-toggle {
     display: none;
+    background: none;
+    border: none;
     cursor: pointer;
+    padding: 0.25rem;
 }
 
 .hamburger span {
@@ -113,44 +117,51 @@
     height: 3px;
     background-color: var(--text-color);
     margin: 5px 0;
-    transition: all 0.3s ease;
+    transition: all var(--transition);
 }
 
-@media (max-width: 768px) {
-    .header {
-        padding: 0.5rem 0;
+.nav-backdrop {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .header-actions {
+        display: none;
     }
 
-    .header-container {
-        padding: 0 1.5rem;
-    }
-
-    .logo-name {
-        font-size: 1.5rem;
-    }
-
-    .logo-dot {
-        font-size: 2rem;
+    .header-mobile-controls {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
     }
 
     .menu-toggle {
         display: block;
     }
 
+    .nav-backdrop {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+
     .nav {
         position: fixed;
         top: 0;
         right: 0;
-        width: 70%;
+        width: min(320px, 80%);
         height: 100vh;
-        background: rgba(10, 10, 10, 0.95);
+        background: var(--header-bg-scrolled);
         backdrop-filter: blur(15px);
         display: flex;
         justify-content: center;
         align-items: center;
         transform: translateX(100%);
-        transition: transform 0.3s ease;
+        transition: transform var(--transition);
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        z-index: 1001;
     }
 
     .nav.open {
@@ -160,11 +171,11 @@
     .nav ul {
         flex-direction: column;
         text-align: center;
-        gap: 3rem;
+        gap: 2.5rem;
     }
 
     .nav a {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
     }
 
     .hamburger.open span:nth-child(1) {
@@ -178,4 +189,17 @@
     .hamburger.open span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
     }
+}
+
+.header-mobile-controls {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 1.25rem;
+    }
+
+    .logo-name { font-size: 1.5rem; }
+    .logo-dot { font-size: 2rem; }
 }

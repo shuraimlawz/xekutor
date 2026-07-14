@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#sky)"/>
+  <circle cx="650" cy="80" r="40" fill="#fbbf24" opacity="0.9"/>
+  <text x="40" y="40" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#fff">WeatherDash</text>
+  <rect x="40" y="70" width="720" height="120" rx="16" fill="rgba(255,255,255,0.08)"/>
+  <text x="60" y="110" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">Accra, Ghana</text>
+  <text x="60" y="160" font-family="system-ui,sans-serif" font-size="48" font-weight="700" fill="#fff">32°</text>
+  <text x="160" y="155" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8">Partly Cloudy</text>
+  <text x="60" y="178" font-family="system-ui,sans-serif" font-size="13" fill="#64748b">H: 34° L: 26°</text>
+  <rect x="40" y="210" width="170" height="100" rx="12" fill="rgba(255,255,255,0.06)"/>
+  <text x="60" y="240" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">Mon</text>
+  <text x="60" y="275" font-family="system-ui,sans-serif" font-size="24" font-weight="600" fill="#fff">31°</text>
+  <rect x="230" y="210" width="170" height="100" rx="12" fill="rgba(255,255,255,0.06)"/>
+  <text x="250" y="240" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">Tue</text>
+  <text x="250" y="275" font-family="system-ui,sans-serif" font-size="24" font-weight="600" fill="#fff">30°</text>
+  <rect x="420" y="210" width="170" height="100" rx="12" fill="rgba(255,255,255,0.06)"/>
+  <text x="440" y="240" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">Wed</text>
+  <text x="440" y="275" font-family="system-ui,sans-serif" font-size="24" font-weight="600" fill="#fff">29°</text>
+  <rect x="610" y="210" width="150" height="100" rx="12" fill="rgba(0,255,136,0.1)" stroke="#00ff88" stroke-width="1"/>
+  <text x="630" y="240" font-family="system-ui,sans-serif" font-size="12" fill="#00ff88">Thu</text>
+  <text x="630" y="275" font-family="system-ui,sans-serif" font-size="24" font-weight="600" fill="#fff">28°</text>
+  <rect x="40" y="330" width="720" height="90" rx="12" fill="rgba(255,255,255,0.05)"/>
+  <text x="60" y="360" font-family="system-ui,sans-serif" font-size="12" fill="#64748b">Hourly Forecast</text>
+  <text x="60" y="395" font-family="system-ui,sans-serif" font-size="13" fill="#94a3b8">12pm 31° · 3pm 33° · 6pm 30° · 9pm 27°</text>
+</svg>

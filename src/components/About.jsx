@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './About.css';
 import { aboutData } from '../data';
 
@@ -16,54 +16,57 @@ const About = () => {
     return (
         <section id="about" className="about">
             <div className="about-container">
-                <div className="about-image">
+                <div className="about-image reveal">
                     <div className="img-carousel">
                         <div className="img-placeholder">
-                            {/* If real image exists, show it. Otherwise show placeholder text. 
-                  For now we simulate 'images' with the placeholder style but index logic is ready.
-              */}
-                            {aboutData.profileImages[currentImageIndex] !== "default-avatar" ? (
-                                <img src={aboutData.profileImages[currentImageIndex]} alt="Profile" className="profile-img" />
-                            ) : (
-                                <span>Profile Image {aboutData.profileImages.length > 1 ? currentImageIndex + 1 : ''}</span>
-                            )}
+                            <img
+                                src={aboutData.profileImages[currentImageIndex]}
+                                alt={`${aboutData.name} profile`}
+                                className="profile-img"
+                            />
                         </div>
 
                         {aboutData.profileImages.length > 1 && (
-                            <div className="carousel-controls">
-                                <button onClick={prevImage} className="carousel-btn prev">&#10094;</button>
-                                <button onClick={nextImage} className="carousel-btn next">&#10095;</button>
-                            </div>
+                            <>
+                                <div className="carousel-controls">
+                                    <button onClick={prevImage} className="carousel-btn prev" aria-label="Previous photo">&#10094;</button>
+                                    <button onClick={nextImage} className="carousel-btn next" aria-label="Next photo">&#10095;</button>
+                                </div>
+                                <div className="carousel-dots">
+                                    {aboutData.profileImages.map((_, i) => (
+                                        <button
+                                            key={i}
+                                            className={`dot ${i === currentImageIndex ? 'active' : ''}`}
+                                            onClick={() => setCurrentImageIndex(i)}
+                                            aria-label={`Photo ${i + 1}`}
+                                        />
+                                    ))}
+                                </div>
+                            </>
                         )}
                     </div>
                 </div>
-                <div className="about-content">
-                    <h2 className="section-title">About Me</h2>
+
+                <div className="about-content reveal reveal-delay-2">
+                    <span className="section-label">About Me</span>
+                    <h2 className="section-title">Who I Am</h2>
 
                     <div className="personal-info">
                         <h3 className="full-name">{aboutData.name}</h3>
                         <p className="nicknames">{aboutData.nicknames}</p>
+                        <p className="title-badge">{aboutData.title}</p>
                     </div>
 
                     {aboutData.description.map((paragraph, index) => (
                         <p key={index} className="about-text">{paragraph}</p>
                     ))}
 
-                    <div className="skills">
-                        <h3>Tech Stack</h3>
-                        <div className="skill-tags">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>TypeScript</span>
-                            <span>Python</span>
-                            <span>PostgreSQL</span>
-                            <span>Docker</span>
-                            <span>AWS</span>
-                            <span>Git</span>
-                        </div>
+                    <div className="about-actions">
+                        <a href={aboutData.resumeUrl} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            Download Resume
+                        </a>
+                        <a href="#contact" className="btn btn-outline">Get In Touch</a>
                     </div>
-
-                    <a href={aboutData.resumeUrl} className="btn btn-primary" download target="_blank" rel="noopener noreferrer">Download Resume</a>
                 </div>
             </div>
         </section>
