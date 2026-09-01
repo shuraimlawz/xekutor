@@ -74,9 +74,9 @@ export const skillsData = [
         category: "Tools",
         skills: [
             { name: "Git", level: 92, image: "/skills/git.svg" },
-            { name: "Figma", level: 75, image: "/skills/figma.svg" },
+            { name: "Figma", level: 52, image: "/skills/figma.svg" },
             { name: "VS Code", level: 95, image: "/skills/vscode.svg" },
-            { name: "Linux", level: 80, image: "/skills/linux.svg" },
+            { name: "Linux", level: 75, image: "/skills/linux.svg" },
             { name: "CI/CD", level: 70, image: "/skills/cicd.svg" },
         ],
     },
@@ -100,7 +100,7 @@ export const experienceData = [
         id: 2,
         role: "Frontend Developer",
         company: "Personal Projects",
-        period: "2021 — 2023",
+        period: "2021 — Present",
         description: "Developed multiple full-stack side projects, honing skills in React, API design, and responsive UI development.",
         details: [
             "Built interactive interfaces with React and Tailwind CSS for a polished user experience.",
