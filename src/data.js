@@ -14,7 +14,7 @@ export const heroData = {
     name: "Shuraim Issaka",
     aliases: ["Xekutor", "Lawz"],
     roles: ["Software Engineer", "Full Stack Developer", "AI Enthusiast", "Cybersecurity Enthusiast", "IT Support Enthusiast", "Computer Science Student @ Ghana Communication Technology University (GCTU)"],
-    tagline: "Founder & Chief Executive Officer (CEO) of Minded Technologies and HostelGH",
+    tagline: "",
     location: "Accra, Ghana",
     available: true,
 };
