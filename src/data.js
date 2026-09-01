@@ -114,13 +114,13 @@ export const experienceData = [
         role: "Computer Science Student",
         company: "Ghana Communication TechnologyUniversity",
         period: "2025 — Present",
-        description: "Studied software engineering fundamentals, data structures, algorithms, and web development.",
+        description: "Studying software engineering fundamentals, data structures, algorithms, and web development.",
         details: [
             "Completed coursework in algorithms, operating systems, and software design patterns.",
             "Worked on group projects to practice version control, testing, and collaborative development.",
             "Explored cybersecurity concepts and system architecture as part of academic studies."
         ],
-        tags: ["Java", "Python", "SQL"],
+        tags: ["HTML", "CSS", "Java", "JavaScript", "C++","Python", "SQL"],
     },
 ];
 
