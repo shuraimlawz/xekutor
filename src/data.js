@@ -112,7 +112,7 @@ export const experienceData = [
     {
         id: 3,
         role: "Computer Science Student",
-        company: "University",
+        company: "Ghana Communication TechnologyUniversity",
         period: "2025 — Present",
         description: "Studied software engineering fundamentals, data structures, algorithms, and web development.",
         details: [
