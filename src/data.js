@@ -113,7 +113,7 @@ export const experienceData = [
         id: 3,
         role: "Computer Science Student",
         company: "University",
-        period: "2020 — 2024",
+        period: "2025 — Present",
         description: "Studied software engineering fundamentals, data structures, algorithms, and web development.",
         details: [
             "Completed coursework in algorithms, operating systems, and software design patterns.",
