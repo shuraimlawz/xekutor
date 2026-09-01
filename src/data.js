@@ -130,7 +130,7 @@ export const projectsData = [
         title: "HostelGH",
         description: "A fully functional hostel booking platform for students in Ghana with search, filters, and secure booking flow.",
         tags: ["React", "Node.js", "MySQL", "TypeScript", "Tailwind"],
-        image: "/projects/hostelgh.svg",
+        image: "/projects/hostelgh.png",
         liveUrl: "#",
         codeUrl: "#",
         featured: true,
