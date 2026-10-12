@@ -100,7 +100,10 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} Shuraim Issaka. All rights reserved.
         </p>
         <p className="footer-built">
-          <b>Minded</b> Associated
+          <b>
+            <a href="https://mindedhq.vercel.app">Minded</a>
+          </b>{" "}
+          Associated
         </p>
       </div>
     </footer>
